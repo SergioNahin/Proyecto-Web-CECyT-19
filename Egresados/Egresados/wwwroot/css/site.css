@@ -1,0 +1,38 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+/* Establece la fuente Open Sans solo para el elemento <nav> */
+nav {
+    font-family: 'Open Sans', sans-serif;
+}
+
+    /* Define otros estilos para el elemento <nav> según tus preferencias */
+    nav.navbar {
+        background-color: #5A1236; /* Color de fondo primario (#5A1236) */
+    }
+
+        nav.navbar .navbar-brand {
+            color: #F1F1F1; /* Color de texto para la marca (#F1F1F1) */
+        }
+
+/* Puedes personalizar otros estilos de tu elemento <nav> aquí */
+

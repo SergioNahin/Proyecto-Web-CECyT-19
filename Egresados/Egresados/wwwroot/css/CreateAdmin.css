@@ -1,0 +1,19 @@
+/* Colores personalizados */
+.text-primary {
+    color: #5B262E; /* Color 5B262E para el texto principal */
+}
+
+.bg-primary {
+    background-color: #5B262E !important; /* Color 5B262E para el fondo principal */
+}
+
+/* Bordes redondeados para el formulario */
+.border {
+    border: 1px solid #999;
+    border-radius: 10px;
+}
+
+/* Sombra suave */
+.shadow {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}

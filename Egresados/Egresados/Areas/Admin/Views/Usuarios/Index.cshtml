@@ -1,0 +1,94 @@
+﻿<link href="~/css/indexadmin.css" rel="stylesheet" />
+
+@model IEnumerable<ApplicationUser>
+@{
+    ViewData["Title"] = "Lista de Usuarios";
+}
+
+<div class="border backgroundWhite">
+    <div class="row">
+        <div class="row align-items-center my-4">
+            <div class="col">
+                <h2 class="text-dark">Lista Usuarios</h2>
+            </div>
+            <div class="col text-right">
+                <a asp-area="Identity" asp-page="/Account/Register" class="btn btn-outline-primary">
+                    <i class="bi bi-person-fill-add"></i> &nbsp;Registrar Usuario
+                </a>
+            </div>
+            
+            <div class="col text-right">
+                <a asp-action="DownloadExcel" class="btn btn-outline-success">
+                    <i class="bi bi-file-excel"></i> &nbsp;Descargar en Excel
+                </a>
+            </div>
+        </div>
+
+        @if (Model.Count() > 0)
+        {
+            <table id="myTable" class="table table-striped table-bordered table-custom" style="width:80%">
+                <thead class="table-primary">
+                    <tr>
+                        <th>Nombre Alumno</th>
+                        <th>@Html.DisplayNameFor(m => m.Correo_Institucional)</th>
+                        <th>@Html.DisplayNameFor(m => m.Boleta)</th>
+                        <th>Superior</th>
+                        <th>Carrera Superior</th>
+                        <th>2a. Superior</th>
+                        <th>Carrera Superior 2</th>
+                        <th>3a. Superior</th>
+                        <th>Carrera Superior 3</th>
+                        <th>@Html.DisplayNameFor(m => m.EscuelaExterna)</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(m => item.Nombre)</td>
+                            <td>@Html.DisplayFor(m => item.Correo_Institucional)</td>
+                            <td>@Html.DisplayFor(m => item.Boleta)</td>
+                            <td>@Html.DisplayFor(m => item.Escuela)</td>
+                            <td>@Html.DisplayFor(m => item.CarreraSuperior)</td>
+                            <td>@Html.DisplayFor(m => item.Escuela2)</td>
+                            <td>@Html.DisplayFor(m => item.CarreraSuperior2)</td>
+                            <td>@Html.DisplayFor(m => item.Escuela3)</td>
+                            <td>@Html.DisplayFor(m => item.CarreraSuperior3)</td>
+                            <td>@Html.DisplayFor(m => item.EscuelaExterna)</td>
+                            <td>
+                                <div class="btn-group" role="group">
+                                    @if (item.LockoutEnd == null || item.LockoutEnd < DateTime.Now)
+                                    {
+                                        <a class="btn btn-success text-white" asp-action="Bloquear" style="width:50px" asp-route-id="@item.Id">
+                                            <i class="fas fa-lock-open"></i>
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <a class="btn btn-danger text-white" asp-action="Desbloquear" style="width:50px" asp-route-id="@item.Id">
+                                            <i class="fas fa-lock"></i>
+                                        </a>
+                                    }
+                                    &nbsp;&nbsp;
+                                    <a class="btn btn-danger text-white" asp-action="Delete" style="width:50px" asp-route-id="@item.Id">
+                                        <i class="fas fa-trash"></i>
+                                    </a>
+                                </div>
+                            </td>
+
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <p>No existen usuarios...</p>
+        }
+    </div>
+</div>
+@section Scripts{
+    <script src="~/js/usuarios.js"></script>
+}

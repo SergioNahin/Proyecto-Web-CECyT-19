@@ -1,0 +1,60 @@
+﻿@model Egresados.Models.ViewModels.ArticuloVM
+@{
+    ViewData["Title"] = "Editar Articulo";
+}
+<h3 class="text-center mt-4">Editar Articulo</h3>
+<link href="~/css/editadmin.css" rel="stylesheet" />
+<div class="container-form">
+
+<div class="container mt-4">
+    <form asp-action="Edit" enctype="multipart/form-data">
+        <!-- Se envia el ID del articulo como campo oculto -->
+        <input type="hidden" asp-for="Articulo.Id" />
+
+        <div class="row">
+            <div class="col-md-8">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label for="Nombre">Nombre del Artículo</label>
+                    <input asp-for="Articulo.Nombre" class="form-control" placeholder="Ingrese el nombre del Artículo" />
+                    <span asp-validation-for="Articulo.Nombre" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="Descripcion">Descripción</label>
+                    <textarea asp-for="Articulo.Descripcion" class="form-control" rows="6" placeholder="Ingrese la descripción del Artículo"></textarea>
+                    <span asp-validation-for="Articulo.Descripcion" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="CategoriaId">Categoría</label>
+                    <select asp-for="Articulo.CategoriaId" asp-items="Model.ListaCategorias" class="form-control">
+                        <option value="">- Por favor seleccione una categoría -</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="UrlImagen">Imagen</label>
+                    <input type="file" name="archivos" id="subidaArchivo" class="form-control-file" />
+                    <span asp-validation-for="Articulo.UrlImagen" class="text-danger"></span>
+                </div>
+
+                <div class="form-group row mt-4">
+                    <div class="col-md-6">
+                        <button type="submit" class="btn btn-primary btn-block">Actualizar</button>
+                    </div>
+                    <div class="col-md-6">
+                        <a asp-action="Index" class="btn btn-success btn-block">Volver a la lista</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <img src="@Model.Articulo.UrlImagen" class="img-fluid rounded" alt="Imagen del Artículo" />
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+</div>

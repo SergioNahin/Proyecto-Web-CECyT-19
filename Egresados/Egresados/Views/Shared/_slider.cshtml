@@ -1,0 +1,36 @@
+﻿@model Egresados.Models.ViewModels.HomeVM
+
+<!--Inicio Slider-->
+
+<div id="carouselExampleFade" class="carousel slide carousel-fade">
+    <div class="carousel-inner">
+
+        @{
+            int cont = 0;
+        }
+        @foreach (var item in Model.Slider)
+        {
+            var itemdinamico = cont++ == 0 ? "item active" : "item";
+
+            @if (item.Estado == true)
+            {
+                <div class="carousel-item @itemdinamico">
+                    <img src="@Url.Content(item.UrlImagen)" class="d-block w-100">
+                    <h2 class="text-white text-center bg-dark py-1">@Html.Raw(item.Nombre)</h2>
+                </div>
+            }
+
+        }
+
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<!--Fin Slider-->

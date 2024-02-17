@@ -1,0 +1,268 @@
+﻿@page
+@using Egresados.Utilidades
+@model RegisterModel
+@{
+    ViewData["Title"] = "Registro";
+}
+<link href="~/css/registrologin.css" rel="stylesheet" />
+<h1 class="text-center">@ViewData["Title"]</h1>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+        <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                <h2 class="mb-4">Crea una nueva cuenta.</h2>
+            <hr />
+            <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+            <!--Datos personales-->        
+            <h5>Datos Personales</h5>
+            <hr />
+            <div class="form-group mb-3">
+                <label asp-for="Input.Nombre"></label>
+                <input asp-for="Input.Nombre" aria-required="true"  placeholder="Juan Jose Hernandez Dominguez" class="form-control">
+                <span asp-validation-for="Input.Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="Input.Boleta"></label>
+                <input asp-for="Input.Boleta" class="form-control" aria-required="true"  placeholder="2021230234" maxlength="10" />
+                <span asp-validation-for="Input.Boleta" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="Input.Grupo"></label>
+                <input asp-for="Input.Grupo" class="form-control" aria-required="true" placeholder="61M01" maxlength="5"/>
+                <span asp-validation-for="Input.Grupo" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="Input.Generacion"></label>
+                <input asp-for="Input.Generacion" class="form-control" aria-required="true" placeholder="2021-2023" maxlength="9" />
+                <span asp-validation-for="Input.Generacion" class="text-danger"></span>
+            </div>
+                <div class="form-group mb-3">
+                    <label asp-for="Input.CURP"></label>
+                    <input asp-for="Input.CURP" class="form-control" placeholder="PEGJ850315HJCRRN07" maxlength="18" />
+                    <span asp-validation-for="Input.CURP" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="Input.FechaNacimiento"></label>
+                    <input asp-for="Input.FechaNacimiento" id="FechaNacimiento" class="form-control" type="date" min="1985-01-01" max="2035-12-31" />
+                    <span asp-validation-for="Input.FechaNacimiento" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="Input.Edad"></label>
+                    <input asp-for="Input.Edad" id="Edad" class="form-control" placeholder="Edad" maxlength="2">
+                    <span asp-validation-for="Input.Edad" class="text-danger"></span>
+                </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Input.Sexo"></label>
+                <input asp-for="Input.Sexo" class="form-control" placeholder="Masculino" />
+                <span asp-validation-for="Input.Sexo" class="text-danger"></span>
+            </div>
+
+            <!--Domicilio-->
+            <h5>Domicilio</h5>
+            <hr />
+            <div class="form-group mb-3">
+                <label asp-for="Input.Domicilio"></label>
+                <input asp-for="Input.Domicilio" class="form-control"   placeholder="Manzana 021, 55767 Ojo de Agua, Méx." />
+                <span asp-validation-for="Input.Domicilio" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Input.Celular"></label>
+                <input asp-for="Input.Celular" class="form-control" aria-required="true" placeholder="5528091109" maxlength="10" />
+                <span asp-validation-for="Input.Celular" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Input.Telefono"></label>
+                <input asp-for="Input.Telefono" class="form-control"   placeholder="5510982298" />
+                <span asp-validation-for="Input.Telefono" class="text-danger"></span>
+            </div>
+            <!--Email-->
+            <h5>E-mail</h5>
+            <hr />
+            <div class="form-group mb-3">
+                <label asp-for="Input.Correo_Institucional"></label>
+                <input asp-for="Input.Correo_Institucional" class="form-control" aria-required="true" placeholder="smartinezr1200@alumno.ipn.mx" />
+                <span asp-validation-for="Input.Correo_Institucional" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="Input.Email"></label>
+                <input asp-for="Input.Email" class="form-control" aria-required="true" placeholder="name@example.com" />
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="Input.Password"></label>
+                <input asp-for="Input.Password" class="form-control" aria-required="true" placeholder="Ingresa tu Boleta"/>
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="Input.ConfirmPassword"></label>
+                <input asp-for="Input.ConfirmPassword" class="form-control" aria-required="true" placeholder="Confirma tu boleta" />
+                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+            </div>
+            <!--Datos Escolares-->
+            <h5>Datos Escolares</h5>
+            <hr />
+            <div class="form-group mb-3">
+                <label asp-for="Input.Carrera"></label>
+                <input asp-for="Input.Carrera" class="form-control" aria-required="true" placeholder="Aeronautica" />
+                <span asp-validation-for="Input.Carrera" class="text-danger"></span>
+            </div>
+                <!-- Pregunta -->
+                <h5>¿Ingresaste al Proceso de Inscripción al Nivel Superior IPN?</h5>
+                <hr />
+
+                <!-- Radio buttons Sí/No -->
+                <div class="form-check mb-3">
+                    <input type="radio" id="radioSeleccionarEscuela" name="procesoInscripcion" value="True" class="form-check-input">
+                    <label class="form-check-label" for="radioSeleccionarEscuela">Sí</label>
+                </div>
+                <div class="form-check mb-3">
+                    <input type="radio" id="radioNoSeleccionarEscuela" name="procesoInscripcion" value="False" class="form-check-input">
+                    <label class="form-check-label" for="radioNoSeleccionarEscuela">No</label>
+                </div>
+
+                <!-- Opciones para "Sí" -->
+                <div id="opcionesEscuela" class="mb-3">
+                    <!-- Input para Folio -->
+                    <div class="form-group">
+                        <label asp-for="Input.Folio">Folio</label>
+                        <input asp-for="Input.Folio" class="form-control" placeholder="23401" maxlength="5" required />
+                        <span asp-validation-for="Input.Folio" class="text-danger"></span>
+                    </div>
+
+                    <label>Anota las opciones que elegiste en tu registro:</label>
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Opción</th>
+                                    <th>Escuela</th>
+                                    <th>Carrera</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1a</td>
+                                    <td>
+                                        <input asp-for="Input.Escuela" class="form-control" placeholder="ESIME TICOMAN" />
+                                        <span asp-validation-for="Input.Escuela" class="text-danger"></span>
+                                    </td>
+                                    <td>
+                                        <input asp-for="Input.CarreraSuperior" class="form-control" placeholder="ING. AERONAUTICA" />
+                                        <span asp-validation-for="Input.CarreraSuperior" class="text-danger"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2a</td>
+                                    <td>
+                                        <input asp-for="Input.Escuela2" class="form-control" placeholder="ESIQIE" />
+                                        <span asp-validation-for="Input.Escuela2" class="text-danger"></span>
+                                    </td>
+                                    <td>
+                                        <input asp-for="Input.CarreraSuperior2" class="form-control" placeholder="ING. PETROQUIMICA" />
+                                        <span asp-validation-for="Input.CarreraSuperior2" class="text-danger"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>3a</td>
+                                    <td>
+                                        <input asp-for="Input.Escuela3" class="form-control" placeholder="ESIME TICOMAN" />
+                                        <span asp-validation-for="Input.Escuela3" class="text-danger"></span>
+                                    </td>
+                                    <td>
+                                        <input asp-for="Input.CarreraSuperior3" class="form-control" placeholder="ING. AERONAUTICA" />
+                                        <span asp-validation-for="Input.CarreraSuperior3" class="text-danger"></span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Opciones para "No" -->
+                <div id="opcionesNoEscuela" class="mb-3">
+                    <label>Anota las opciones que elegiste en tu registro:</label>
+                    <div class="form-group">
+                        <!-- Escuela Externa -->
+                        <input asp-for="Input.EscuelaExterna" class="form-control" placeholder="UAM AZCAPOTZALCO, ING. MECANICA" />
+                        <span asp-validation-for="Input.EscuelaExterna" class="text-danger"></span>
+                    </div>
+                </div>
+
+            @if (User.IsInRole(CNT.Admin))
+            {
+                <!-- Selector de roles -->
+                <div class="form-group row">
+                    <div class="col-12 col-md-6">
+                        <h4>Seleccionar Rol de Usuario</h4>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="btn-group" role="group" aria-label="Seleccionar Rol">
+                            <input type="radio" name="radUsuarioRole" value="@CNT.Admin" id="adminRole" class="btn-check" autocomplete="off">
+                            <label class="btn btn-primary" for="adminRole">@CNT.Admin</label>
+
+                            <input type="radio" name="radUsuarioRole" value="@CNT.Usuario" id="usuarioRole" class="btn-check" autocomplete="off">
+                            <label class="btn btn-primary" for="usuarioRole">@CNT.Usuario</label>
+                        </div>
+                    </div>
+                </div>
+            }
+
+            <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Registro</button>
+        </form>
+    </div>
+</div>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const radioSeleccionarEscuela = document.getElementById("radioSeleccionarEscuela");
+        const radioNoSeleccionarEscuela = document.getElementById("radioNoSeleccionarEscuela");
+        const opcionesEscuela = document.getElementById("opcionesEscuela");
+        const opcionesNoEscuela = document.getElementById("opcionesNoEscuela");
+
+        radioSeleccionarEscuela.addEventListener("change", function () {
+            opcionesEscuela.style.display = this.checked ? "block" : "none";
+            opcionesNoEscuela.style.display = "none";
+        });
+        if (this.checked) {
+            $("#Input_Folio").prop("required", true);
+        } else {
+            $("#Input_Folio").prop("required", false);
+        }
+
+        radioNoSeleccionarEscuela.addEventListener("change", function () {
+            opcionesNoEscuela.style.display = this.checked ? "block" : "none";
+            opcionesEscuela.style.display = "none";
+        });
+
+        // Ocultar ambas vistas al cargar la página
+        opcionesEscuela.style.display = "none";
+        opcionesNoEscuela.style.display = "none";
+        // Obtén referencias a los campos de fecha de nacimiento y edad
+        const fechaNacimientoInput = document.getElementById("FechaNacimiento");
+        const edadInput = document.getElementById("Edad");
+
+        // Agrega un evento 'change' al campo de fecha de nacimiento
+        fechaNacimientoInput.addEventListener("change", calcularEdad);
+
+        // Función para calcular la edad
+        function calcularEdad() {
+            const fechaNacimiento = new Date(fechaNacimientoInput.value);
+            const fechaActual = new Date();
+            const edad = fechaActual.getFullYear() - fechaNacimiento.getFullYear();
+
+            // Actualiza el campo de entrada de edad con el valor calculado
+            edadInput.value = edad;
+        }
+
+        // Llama a la función para calcular la edad cuando la página se carga inicialmente (si ya hay una fecha de nacimiento ingresada)
+        calcularEdad();
+    });
+</script>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+

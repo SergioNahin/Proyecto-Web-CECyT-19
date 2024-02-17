@@ -1,0 +1,59 @@
+/* Colores personalizados */
+.text-primary {
+    color: #5B262E; /* Color 5B262E para el texto principal */
+}
+
+.btn-outline-primary {
+    color: #5B262E; /* Color 5B262E para el texto de botones */
+    border-color: #5B262E; /* Color 5B262E para el borde de botones */
+}
+
+    .btn-outline-primary:hover {
+        background-color: #5B262E; /* Color de fondo al pasar el mouse */
+        color: #fff; /* Color de texto al pasar el mouse */
+    }
+
+/* Estilos de la tabla */
+.table {
+    border-color: #999; /* Color 999 para los bordes de la tabla */
+}
+
+    .table thead th {
+        background-color: #F1F1F1; /* Color F1F1F1 para el encabezado de la tabla */
+        color: #5A1236; /* Color 5A1236 para el texto del encabezado */
+    }
+
+/* Estilos para las filas impares */
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #F1F1F1; /* Color F1F1F1 para filas impares */
+}
+
+/* Estilos para el botón de crear */
+.btn-crear {
+    background-color: #5B262E; /* Color 5B262E para el fondo del botón */
+    color: #fff; /* Color de texto para el botón */
+    border-color: #5B262E; /* Color 5B262E para el borde del botón */
+}
+
+    .btn-crear:hover {
+        background-color: #333; /* Color de fondo al pasar el mouse */
+        border-color: #333; /* Color de borde al pasar el mouse */
+    }
+/* Estilos para centrar la tabla */
+.table-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Ajusta la altura al 100% de la pantalla */
+}
+
+/* Estilos para la tabla */
+.table-custom {
+    width: 100%;
+}
+
+    /* Estilos para las filas impares */
+    .table-custom tbody tr:nth-child(odd) {
+        background-color: #f2f2f2; /* Color de fondo para filas impares */
+    }

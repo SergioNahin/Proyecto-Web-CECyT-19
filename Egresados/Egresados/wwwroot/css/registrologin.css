@@ -1,0 +1,92 @@
+/* Estilos generales del formulario */
+#registerForm {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #F1F1F1; /* Color F1F1F1 */
+    border: 1px solid #5A1236; /* Color 5A1236 */
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Títulos */
+h1, h2, h5 {
+    text-align: center;
+    color: #5B262E; /* Color 5B262E */
+}
+
+/* Radio buttons y etiquetas */
+.form-check-label {
+    font-weight: bold;
+}
+
+/* Botones de radio */
+.form-check-input:checked + .form-check-label::before {
+    background-color: #5B262E; /* Color 5B262E */
+    border-color: #5B262E; /* Color 5B262E */
+}
+
+/* Estilos de los campos de entrada */
+.form-control {
+    border-radius: 5px;
+    transition: border-color 0.2s;
+}
+
+    .form-control:focus {
+        border-color: #5B262E; /* Color 5B262E */
+        box-shadow: 0 0 5px rgba(91, 38, 46, 0.5); /* Color 5B262E con transparencia */
+    }
+
+/* Botón de registro */
+#registerSubmit {
+    background-color: #5B262E; /* Color 5B262E */
+    border: none;
+    transition: background-color 0.3s;
+}
+
+    #registerSubmit:hover {
+        background-color: #333; /* Color 333 (más oscuro) */
+    }
+
+/* Estilos de tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table, th, td {
+    border: 1px solid #CCCCCC; /* Color CCCC */
+}
+
+th, td {
+    padding: 8px;
+    text-align: center;
+}
+
+/* Cambiar colores en los campos de entrada requeridos */
+input:required {
+    border-color: #5B262E; /* Color 5B262E */
+}
+
+/* Cambiar colores en los mensajes de validación */
+.text-danger {
+    color: #5B262E; /* Color 5B262E */
+}
+
+/* Animación de aparición */
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

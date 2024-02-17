@@ -1,0 +1,12 @@
+C:\Users\LENOVO T440P\Desktop\servicio social\Egresados\Egresados.Models\obj\Debug\net7.0\Egresados.Models.csproj.AssemblyReference.cache
+C:\Users\LENOVO T440P\Desktop\servicio social\Egresados\Egresados.Models\obj\Debug\net7.0\Egresados.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LENOVO T440P\Desktop\servicio social\Egresados\Egresados.Models\obj\Debug\net7.0\Egresados.Models.AssemblyInfoInputs.cache
+C:\Users\LENOVO T440P\Desktop\servicio social\Egresados\Egresados.Models\obj\Debug\net7.0\Egresados.Models.AssemblyInfo.cs
+C:\Users\LENOVO T440P\Desktop\servicio social\Egresados\Egresados.Models\obj\Debug\net7.0\Egresados.Models.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO T440P\Desktop\servicio social\Egresados\Egresados.Models\bin\Debug\net7.0\Egresados.Models.deps.json
+C:\Users\LENOVO T440P\Desktop\servicio social\Egresados\Egresados.Models\bin\Debug\net7.0\Egresados.Models.dll
+C:\Users\LENOVO T440P\Desktop\servicio social\Egresados\Egresados.Models\bin\Debug\net7.0\Egresados.Models.pdb
+C:\Users\LENOVO T440P\Desktop\servicio social\Egresados\Egresados.Models\obj\Debug\net7.0\Egresados.Models.dll
+C:\Users\LENOVO T440P\Desktop\servicio social\Egresados\Egresados.Models\obj\Debug\net7.0\refint\Egresados.Models.dll
+C:\Users\LENOVO T440P\Desktop\servicio social\Egresados\Egresados.Models\obj\Debug\net7.0\Egresados.Models.pdb
+C:\Users\LENOVO T440P\Desktop\servicio social\Egresados\Egresados.Models\obj\Debug\net7.0\ref\Egresados.Models.dll

@@ -1,0 +1,101 @@
+/* Estilos generales */
+body {
+    background-color: #f1f1f1; /* Color de fondo */
+    font-family: "Roboto", sans-serif; /* Fuente Roboto */
+}
+
+/* Estilos para el formulario */
+.login-form {
+    background-color: #fff; /* Fondo del formulario */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1); /* Sombra */
+    transition: transform 0.2s ease-in-out; /* Efecto de escala al pasar el ratón */
+}
+
+    .login-form:hover {
+        transform: scale(1.02); /* Efecto de escala al pasar el ratón */
+    }
+
+    .login-form h2 {
+        font-size: 24px;
+        font-weight: bold;
+        color: #333; /* Color de texto */
+    }
+
+/* Estilos para los campos de entrada */
+.form-floating {
+    margin-bottom: 15px;
+}
+
+    .form-floating input.form-control {
+        border-radius: 8px;
+        padding: 10px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+        color: #333; /* Color de texto del campo */
+    }
+
+        /* Iconos para los campos de entrada */
+        .form-floating input.form-control:focus + label::after {
+            content: "\f2b9"; /* Icono de lápiz (editar) de FontAwesome */
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            font-size: 14px;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #5a1236; /* Color de ícono cuando el campo está enfocado */
+        }
+        .form-floating input.form-control[type="password"]:focus + label::before {
+            content: "\f084"; /* Icono de llave de FontAwesome */
+        }
+        .form-floating input.form-control:valid + label::after {
+            content: "\f00c"; /* Icono de marca de verificación de FontAwesome */
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            font-size: 14px;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #5a1236; /* Color de ícono cuando el campo es válido */
+        }
+
+/* Estilos para el botón de inicio de sesión */
+#login-submit {
+    font-size: 18px;
+    margin-top: 15px;
+    background-color: #5a1236; /* Color de fondo del botón */
+    border: none;
+    font-family: "Roboto", sans-serif; /* Fuente Roboto */
+}
+
+    #login-submit:hover {
+        background-color: #333; /* Color de fondo al pasar el ratón sobre el botón */
+    }
+
+    #login-submit:focus {
+        box-shadow: none; /* Quita el resplandor al hacer clic en el botón */
+    }
+
+.login-form p {
+    font-size: 14px;
+    text-align: center;
+    color: #999; /* Color de texto para el enlace de registro */
+    font-family: "Roboto", sans-serif; /* Fuente Roboto */
+}
+
+/* Estilos para el enlace de registro */
+.text-primary {
+    text-decoration: none;
+    font-weight: bold;
+    color: #333; /* Color del enlace */
+    font-family: "Roboto", sans-serif; /* Fuente Roboto */
+}
+
+    .text-primary:hover {
+        text-decoration: underline; /* Subraya el enlace al pasar el ratón sobre él */
+        color: #5a1236; /* Cambia el color del enlace al pasar el ratón sobre él */
+        font-family: "Roboto", sans-serif; /* Fuente Roboto */
+    }

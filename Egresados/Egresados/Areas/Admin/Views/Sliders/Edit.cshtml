@@ -1,0 +1,63 @@
+﻿@model Egresados.Models.Slider
+@{
+    ViewData["Title"] = "Editar Presentación";
+}
+
+<link href="~/css/editadmin.css" rel="stylesheet" />
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <form method="POST" asp-action="Edit" enctype="multipart/form-data" class="border rounded p-4 shadow">
+                <h3 class="text-center mb-4 text-primary">Editar Presentación</h3>
+                <input type="hidden" asp-for="Id" />
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="mb-3">
+                    <label asp-for="Nombre" class="form-label font-weight-bold text-primary"></label>
+                    <input asp-for="Nombre" class="form-control" placeholder="Ingrese el nombre de la Presentación" />
+                    <span asp-validation-for="Nombre" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label for="Estado" class="form-label font-weight-bold text-primary">Estado</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="bi bi-eye-fill"></i></span>
+                        </div>
+                        <input asp-for="Estado" />
+                    </div>
+                    <span asp-validation-for="Estado" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="UrlImagen" class="form-label font-weight-bold text-primary"></label>
+                    <input type="file" name="archivos" id="subidaArchivo" class="form-control" />
+                    <span asp-validation-for="UrlImagen" class="text-danger"></span>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col">
+                        <button type="submit" class="btn btn-primary btn-block">Actualizar</button>
+                    </div>
+                    <div class="col">
+                        <a asp-action="Index" class="btn btn-success btn-block">Volver a lista</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-4">
+            <div class="text-center">
+                <img src="@Model.UrlImagen" class="img-fluid rounded shadow" alt="Imagen de Presentación" />
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
